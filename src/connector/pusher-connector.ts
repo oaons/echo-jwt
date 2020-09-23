@@ -53,7 +53,7 @@ export class PusherConnector extends Connector {
     /**
      * Get a private channel instance by name.
      */
-    privateChannel(name: string): PusherChannel {
+    privateChannel(name: string, token: string): PusherChannel {
         if (!this.channels['private-' + name]) {
             this.channels['private-' + name] = new PusherPrivateChannel(this.pusher, 'private-' + name, this.options);
         }

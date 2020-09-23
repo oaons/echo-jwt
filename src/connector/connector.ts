@@ -76,7 +76,7 @@ export abstract class Connector {
     /**
      * Get a private channel instance by name.
      */
-    abstract privateChannel(channel: string): Channel;
+    abstract privateChannel(channel: string, token: string): Channel;
 
     /**
      * Get a presence channel instance by name.

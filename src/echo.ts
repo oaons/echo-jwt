@@ -87,8 +87,8 @@ export default class Echo {
     /**
      * Get a private channel instance by name.
      */
-    private(channel: string): Channel {
-        return this.connector.privateChannel(channel);
+    private(channel: string, token: string): Channel {
+        return this.connector.privateChannel(channel, token);
     }
 
     /**

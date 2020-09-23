@@ -34,7 +34,7 @@ export class NullConnector extends Connector {
     /**
      * Get a private channel instance by name.
      */
-    privateChannel(name: string): NullPrivateChannel {
+    privateChannel(name: string, token: string): NullPrivateChannel {
         return new NullPrivateChannel();
     }
 

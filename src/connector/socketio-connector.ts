@@ -62,9 +62,10 @@ export class SocketIoConnector extends Connector {
     /**
      * Get a private channel instance by name.
      */
-    privateChannel(name: string): SocketIoPrivateChannel {
+    privateChannel(name: string, token: string): SocketIoPrivateChannel {
         if (!this.channels['private-' + name]) {
-            this.channels['private-' + name] = new SocketIoPrivateChannel(this.socket, 'private-' + name, this.options);
+            let options = Object.assign(this.options, { auth: { headers: { Authorization: 'Bearer: ' + token}}});
+            this.channels['private-' + name] = new SocketIoPrivateChannel(this.socket, 'private-' + name, options);
         }
 
         return this.channels['private-' + name];
